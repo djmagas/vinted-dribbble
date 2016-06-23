@@ -1,16 +1,17 @@
+var page = 1;
 var xmlhttp = new XMLHttpRequest();
-var url = "https://api.dribbble.com/v1/users/creativemints/likes/?access_token=bafd540374369dfd0af5603ebb07973a6964a128810de4abb1cbbcde205ab532";
+var url = 'https://api.dribbble.com/v1/users/creativemints/likes/?access_token=bafd540374369dfd0af5603ebb07973a6964a128810de4abb1cbbcde205ab532&amp;page=' + page + '';
 
 xmlhttp.onreadystatechange = function() {
   if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-    var myArr = JSON.parse(xmlhttp.responseText);
-    myFunction(myArr);
+    var shotArray = JSON.parse(xmlhttp.responseText);
+    buildShot(shotArray);
   }
 };
 xmlhttp.open("GET", url, true);
 xmlhttp.send();
 
-function myFunction(arr) {
+function buildShot(arr) {
   var out = "";
   var i;
   //console.log(arr);
