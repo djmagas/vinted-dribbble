@@ -6,7 +6,7 @@ $(function() {
   
 
   
-  function getPosts(i) {
+  function getPosts() {
     $.ajax({
       url: 'https://api.dribbble.com/v1/users/creativemints/likes/?access_token=bafd540374369dfd0af5603ebb07973a6964a128810de4abb1cbbcde205ab532&amp;page=' + i + '&per_page=15',
       beforeSend: function( xhr ) {
@@ -27,6 +27,7 @@ $(function() {
         }());
       });
     i++;
+    console.log(i);
   }
     
   // Load additional shots on scroll using jquery plugin. No bonus points for this :(
