@@ -8,7 +8,7 @@ $(function() {
   
   function getPosts(i) {
     $.ajax({
-      url: 'https://api.dribbble.com/v1/users/creativemints/likes/?access_token=bafd540374369dfd0af5603ebb07973a6964a128810de4abb1cbbcde205ab532&amp;page=' + i + '&per_page=10',
+      url: 'https://api.dribbble.com/v1/users/creativemints/likes/?access_token=bafd540374369dfd0af5603ebb07973a6964a128810de4abb1cbbcde205ab532&amp;page=' + i + '&per_page=15',
       beforeSend: function( xhr ) {
         xhr.overrideMimeType( "text/plain; charset=x-user-defined" );
       }
@@ -33,7 +33,7 @@ $(function() {
   $(window).endlessScroll({
     insertAfter: '#gallery',
     bottomPixels: 500,
-    fireDelay: 10,
+    fireDelay: 0,
     callback: function() {
       var last_img = $("#gallery figure:last");
       last_img.after( function() {
