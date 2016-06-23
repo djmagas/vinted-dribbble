@@ -18,16 +18,10 @@ $(function() {
         $.each(shotArray, function (i, value) {
           $('#gallery').append('<figure class="gallery__item"><img data-original="' + shotArray[i].shot.images.normal + '" data-original-set="' + shotArray[i].shot.images.normal + ' 1x, ' + shotArray[i].shot.images.hidpi + ' 2x"><figcaption class="gallery__caption"><div class="gallery__textwraper"><h2 class="gallery__caption__title">' + shotArray[i].shot.title + '</h2><span class="gallery__caption__author">' + shotArray[i].shot.user.name + '</span></div><a href="' + shotArray[i].likes_url + '" class="gallery__item__button" target="_blank">Favourite</a></figcaption></figure>');
         });
-        
         // Enabling LazyLoad
-        (function () {
-          new LazyLoad({
-            show_while_loading: true
-          });
-        }());
+        new LazyLoad();
       });
     i++;
-    console.log(i);
   }
     
   // Load additional shots on scroll using jquery plugin. No bonus points for this :(
